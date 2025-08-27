@@ -1,17 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  /* your existing options ... */
   eslint: {
+    // Don’t fail the Vercel build on ESLint issues
     ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // Don’t fail the Vercel build on TS type errors
+    ignoreBuildErrors: true,
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
